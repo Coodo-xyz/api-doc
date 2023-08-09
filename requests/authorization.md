@@ -10,7 +10,9 @@ Authorization: Bearer <access_token>
 
 Replace with the token provided to you by Coodo.xyz.
 
-If you make a request without a valid access token or with an expired access token, you'll receive a <mark style="color:orange;">`401 Unauthorized`</mark> response. In that case, you'll need to obtain a new access token by logging in again.
+If you make a request without a valid access token or with an expired access token, you'll receive a <mark style="color:orange;">`401 Unauthorized`</mark> (possible code:[ `API_008`](../errors-codes.md)) response. In that case, you'll need to obtain a new access token by logging in again.\
+\
+Your request may be refused for a number of reasons. You will receive a <mark style="color:orange;">`403 Forbidden`</mark> (possibles codes: [`API_005`, `API_006`, `API_007`](../errors-codes.md)) response.
 
 Note that access tokens are valid for a limited time and will expire after a certain period of inactivity. Be sure to check the expiration time of your token and refresh it as needed.
 
