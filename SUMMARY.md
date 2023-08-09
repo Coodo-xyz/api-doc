@@ -1,7 +1,8 @@
 # Table of contents
 
-* [Authorization](README.md)
-* [Rate limit](rate-limit.md)
+* [Coodo.xyz API](README.md)
+  * [Authorization](coodo.xyz-api/authorization.md)
+  * [Rate limit](coodo.xyz-api/rate-limit.md)
 
 ## Requests
 
@@ -11,4 +12,3 @@
 ## utils
 
 * [Errors codes](utils/errors-codes.md)
-* [Permissions](utils/readme.md)
