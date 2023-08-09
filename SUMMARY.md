@@ -1,10 +1,13 @@
 # Table of contents
 
-* [Permissions](README.md)
-* [Errors Codes](errors-codes.md)
+* [Authorization](README.md)
+* [Rate limit](rate-limit.md)
 
 ## Requests
 
-* [authorization](requests/authorization.md)
-* [rate limit](requests/rate-limit.md)
-* [users](requests/users.md)
+* [Users](requests/users.md)
+
+## utils
+
+* [Errors codes](utils/errors-codes.md)
+* [Permissions](utils/readme.md)

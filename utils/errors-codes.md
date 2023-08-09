@@ -1,6 +1,6 @@
-# Errors Codes
+# Errors codes
 
-|          |                               |
+| Code     | Description                   |
 | -------- | ----------------------------- |
 | API\_001 | To many polls                 |
 | API\_002 | Already voted for this poll   |

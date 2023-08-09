@@ -1,6 +1,6 @@
-# users
+# Users
 
-### users/{userId}
+### users/:id
 
 {% swagger method="get" path="/users/:id" baseUrl="https://api.coodo.xyz" summary="Find user by ID" %}
 {% swagger-description %}
@@ -160,7 +160,7 @@ Bearer token
 {% endswagger-response %}
 {% endswagger %}
 
-### users/{userId}/polls
+### users/:id/polls
 
 {% swagger method="get" baseUrl="https://api.coodo.xyz" summary="Get user polls by ID" path="/users/:id/polls" expanded="false" %}
 {% swagger-description %}
