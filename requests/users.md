@@ -1,5 +1,7 @@
 # Users
 
+### /user
+
 {% swagger method="get" path="/user" baseUrl="https://api.coodo.xyz" summary="Find user using token" %}
 {% swagger-description %}
 
@@ -58,6 +60,25 @@ Bearer token
 {% endswagger-response %}
 {% endswagger %}
 
+{% swagger method="put" path="/user/favorites" baseUrl="https://api.coodo.xyz" summary="Update user favorites polls using token" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
+Bearer token
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```json
+{
+    "message": "OK",
+    "data": <array> // Array of polls ids
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
 ### users/:id
 
 {% swagger method="get" path="/users/:id" baseUrl="https://api.coodo.xyz" summary="Find user by ID" %}
@@ -93,62 +114,6 @@ Bearer token
         "favoritesPolls": <array>,
         "lastUpdate": <int>
     }
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="" %}
-```json
-{
-    "error": "Not Found"
-}
-```
-{% endswagger-response %}
-{% endswagger %}
-
-{% swagger method="delete" path="/users/:id" baseUrl="https://api.coodo.xyz" summary="Delete user by ID" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-parameter in="path" name="id" type="String" required="true" %}
-ID of the user to delete
-{% endswagger-parameter %}
-
-{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
-Bearer token
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="" %}
-```json
-{
-    "message": "OK",
-    "data": {
-    	"id": <string>,
-	"username": <string>,
-	"discriminator": <string>,
-	"public_flags": <int>,
-	"flags": <int>,
-	"locale": <string>,
-	"premium_type": <int>,
-	"tag": <string>,
-	"avatarURL": <string>,
-	"disabled": <boolean>,
-	"premium": <boolean>,
-	"alerts": <int>,
-	"roles": { type: Array },
-	"lastUpdate": <int>,
-	"email": <string>,
-	"stripeCustomerId": <string>,
-	"favoritesPolls": <array>
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="403: Forbidden" description="" %}
-```json
-{
-    "error": "Forbidden"
 }
 ```
 {% endswagger-response %}
@@ -198,6 +163,62 @@ Bearer token
 	"stripeCustomerId": <string>,
 	"favoritesPolls": <array>
     }
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="403: Forbidden" description="" %}
+```json
+{
+    "error": "Forbidden"
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="" %}
+```json
+{
+    "error": "Not Found"
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="delete" path="/users/:id" baseUrl="https://api.coodo.xyz" summary="Delete user by ID" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" type="String" required="true" %}
+ID of the user to delete
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
+Bearer token
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```json
+{
+    "message": "OK",
+    "data": {
+    	"id": <string>,
+	"username": <string>,
+	"discriminator": <string>,
+	"public_flags": <int>,
+	"flags": <int>,
+	"locale": <string>,
+	"premium_type": <int>,
+	"tag": <string>,
+	"avatarURL": <string>,
+	"disabled": <boolean>,
+	"premium": <boolean>,
+	"alerts": <int>,
+	"roles": { type: Array },
+	"lastUpdate": <int>,
+	"email": <string>,
+	"stripeCustomerId": <string>,
+	"favoritesPolls": <array>
 }
 ```
 {% endswagger-response %}
@@ -306,6 +327,32 @@ Bearer token
 ```json
 {
     "error": "Forbidden"
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+### users/:id/polls/count
+
+{% swagger method="get" path="/users/:id/polls/count" baseUrl="https://api.coodo.xyz" summary="Get user polls count by ID" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" type="String" required="true" %}
+ID of the user to delete polls
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
+Bearer token
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```json
+{
+    "message": "OK",
+    "count": <int>,
+    "max": <int>
 }
 ```
 {% endswagger-response %}
