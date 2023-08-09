@@ -69,6 +69,10 @@ Bearer token
 Bearer token
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="favoritesPolls" type="Array" required="true" %}
+Array of polls ids
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="" %}
 ```json
 {
