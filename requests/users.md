@@ -134,7 +134,7 @@ Bearer token
 	"disabled": <boolean>,
 	"premium": <boolean>,
 	"alerts": <int>,
-	"roles": { type: Array },
+	"roles": <array>,
 	"lastUpdate": <int>,
 	"email": <string>,
 	"stripeCustomerId": <string>,
