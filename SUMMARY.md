@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Coodo.xyz API](README.md)
+  * [Quick start](coodo.xyz-api/quick-start.md)
   * [Authorization](coodo.xyz-api/authorization.md)
   * [Rate limit](coodo.xyz-api/rate-limit.md)
 
