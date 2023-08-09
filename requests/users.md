@@ -1,5 +1,63 @@
 # Users
 
+{% swagger method="get" path="/user" baseUrl="https://api.coodo.xyz" summary="Find user using token" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
+Bearer token
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```json
+{
+    "message": "OK",
+    "data": {
+    	"id": <string>,
+	"username": <string>,
+	"discriminator": <string>,
+	"public_flags": <int>,
+	"flags": <int>,
+	"locale": <string>,
+	"premium_type": <int>,
+	"tag": <string>,
+	"avatarURL": <string>,
+	"disabled": <boolean>,
+	"premium": <boolean>,
+	"alerts": <int>,
+	"roles": <array>,
+	"lastUpdate": <int>,
+	"email": <string>,
+	"stripeCustomerId": <string>,
+	"favoritesPolls": <array> // Array of polls ids
+    }
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+{% swagger method="get" path="/user/favorites" baseUrl="https://api.coodo.xyz" summary="Find user favorites polls using token" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
+Bearer token
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+<pre class="language-json"><code class="lang-json">{
+    "message": "OK",
+    "data": [
+        { <a data-footnote-ref href="#user-content-fn-1">pollObject</a> },
+        ...
+    ]
+}
+</code></pre>
+{% endswagger-response %}
+{% endswagger %}
+
 ### users/:id
 
 {% swagger method="get" path="/users/:id" baseUrl="https://api.coodo.xyz" summary="Find user by ID" %}
@@ -139,6 +197,7 @@ Bearer token
 	"email": <string>,
 	"stripeCustomerId": <string>,
 	"favoritesPolls": <array>
+    }
 }
 ```
 {% endswagger-response %}
@@ -251,3 +310,5 @@ Bearer token
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+[^1]: See polls requests page
