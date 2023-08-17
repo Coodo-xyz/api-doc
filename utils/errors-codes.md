@@ -14,3 +14,4 @@
 | API\_010 | Terms missing in body         |
 | API\_011 | Cannot update ended poll      |
 | API\_012 | User ID already used          |
+| API\_013 | Guild not found               |
