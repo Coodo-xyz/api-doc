@@ -46,3 +46,11 @@ else:
 ```
 {% endtab %}
 {% endtabs %}
+
+## API Flow Diagram
+
+<div data-full-width="true">
+
+<figure><img src="../.gitbook/assets/Systems Api Usage Diagram.png" alt=""><figcaption></figcaption></figure>
+
+</div>
