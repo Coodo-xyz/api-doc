@@ -12,3 +12,5 @@ To ensure fair usage and maintain the stability of the Coodo.xyz API, rate limit
 If you exceed this limit, you will receive a <mark style="color:orange;">`429 Too Many Requests`</mark> response. To continue using the API, wait until the rate limit window resets.
 
 It's important to note that rate limits are in place to maintain the quality of service for all users. If you consistently encounter rate limit issues, consider optimizing your API usage, reducing the frequency of requests, or contacting us to discuss your specific needs.
+
+![rate limit](https://github.com/Coodo-xyz/api-doc/assets/114762819/c5957e6b-6172-4c22-a69d-badc28f45eec)
