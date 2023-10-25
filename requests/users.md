@@ -371,8 +371,12 @@ Bearer token
 :warning: A maximum of 50 users are returned
 {% endswagger-description %}
 
-{% swagger-parameter in="query" name="filter" type="String" %}
+{% swagger-parameter in="query" name="username" type="String" %}
 Username filter
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" %}
+Username id
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
