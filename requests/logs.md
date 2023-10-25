@@ -4,11 +4,23 @@
 
 {% swagger method="get" path="/logs" baseUrl="https://api.coodo.xyz" summary="Find api logs" %}
 {% swagger-description %}
-
+:warning: A maximum of 100 logs are returned
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
 Bearer token
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="username" %}
+Username filter
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="id" %}
+User id filter
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="action" %}
+Action id filter
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
