@@ -83,7 +83,7 @@ Array of polls ids
 {% endswagger-response %}
 {% endswagger %}
 
-### users/:id
+### /users/:id
 
 {% swagger method="get" path="/users/:id" baseUrl="https://api.coodo.xyz" summary="Find user by ID" %}
 {% swagger-description %}
@@ -244,7 +244,7 @@ Bearer token
 {% endswagger-response %}
 {% endswagger %}
 
-### users/:id/polls
+### /users/:id/polls
 
 {% swagger method="get" baseUrl="https://api.coodo.xyz" summary="Get user polls by ID" path="/users/:id/polls" expanded="false" %}
 {% swagger-description %}
@@ -252,7 +252,7 @@ Bearer token
 {% endswagger-description %}
 
 {% swagger-parameter in="path" type="String" required="true" name="id" %}
-ID of the user to get polls 
+ID of the user to get polls&#x20;
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
@@ -336,7 +336,7 @@ Bearer token
 {% endswagger-response %}
 {% endswagger %}
 
-### users/:id/polls/count
+### /users/:id/polls/count
 
 {% swagger method="get" path="/users/:id/polls/count" baseUrl="https://api.coodo.xyz" summary="Get user polls count by ID" %}
 {% swagger-description %}
@@ -357,6 +357,47 @@ Bearer token
     "message": "OK",
     "count": <int>,
     "max": <int>
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+### /users
+
+
+
+{% swagger method="get" path="/users" baseUrl="https://api.coodo.xyz" summary="Get users" %}
+{% swagger-description %}
+:warning: A maximum of 50 users are returned
+{% endswagger-description %}
+
+{% swagger-parameter in="query" name="filter" type="String" %}
+Username filter
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```json
+{
+    "message": "OK",
+    "data": [
+        {
+            "id": <string>,
+            "username": <string>,
+            "discriminator": <string>,
+            "public_flags": <int>,
+            "flags": <int>,
+            "locale": <string>,
+            "premium_type": <int>,
+            "tag": <string>,
+            "avatarURL": <string>,
+            "disabled": <boolean>,
+            "alerts": <int>,
+            "roles": <array>,
+            "favoritesPolls": <array>,
+            "lastUpdate": <int>
+        }
+        {...}
+    ]
 }
 ```
 {% endswagger-response %}
