@@ -10,6 +10,7 @@
 * [Users](requests/users.md)
 * [Polls](requests/polls.md)
 * [Logs](requests/logs.md)
+* [Stats](requests/logs-1.md)
 
 ## utils
 
