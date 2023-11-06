@@ -364,8 +364,6 @@ Bearer token
 
 ### /users
 
-
-
 {% swagger method="get" path="/users" baseUrl="https://api.coodo.xyz" summary="Get users" %}
 {% swagger-description %}
 :warning: A maximum of 50 users are returned
@@ -401,6 +399,50 @@ Username id
             "lastUpdate": <int>
         }
         {...}
+    ]
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+### /users/:id/guilds
+
+{% swagger method="get" path="/users/:id/guilds" baseUrl="https://api.coodo.xyz" summary="Get user guilds by ID" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" type="String" required="true" %}
+ID of the user to get polls&#x20;
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Authorization" type="String" required="true" %}
+Bearer token
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="botOn" type="String" %}
+Only user guilds where bot is on
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+```json
+{
+    "message": "OK",
+    "data": [
+    	{
+            "id": <string>,
+            "name": <string>,
+            "icon": <string>,
+            "features": <array>,
+            "approximate_member_count": <int>,
+	    "approximate_presence_count": <int>,
+            "owner_id": <string>, // only with botOn = true
+	    "last_update": <int>, // only with botOn = true
+	    "owner": <boolean>, // only with botOn = false
+	    "permissions": <string>, // only with botOn = false
+	    "channels": <array>, // only with botOn = false
+	},
+	...
     ]
 }
 ```
