@@ -158,7 +158,8 @@ Bearer token
                 "ids": [
                     {
                         "id": &#x3C;string>,
-                        "username": &#x3C;string>
+                        "username": &#x3C;string>,
+                        "server_name": &#x3C;string>
                     },
                     ...
                 ]
