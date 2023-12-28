@@ -35,6 +35,10 @@ Poll title
 How many options users can select
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="guild" type="Object" required="true" %}
+Guild id and name
+{% endswagger-parameter %}
+
 {% swagger-parameter in="body" name="timestamp_close" type="Integer" %}
 Set an end date
 {% endswagger-parameter %}
@@ -58,6 +62,10 @@ Discord channel ID
     "data": {
 	"pollID": <string>,
 	"channelID": <string>,
+	"guild": {
+	    "id": <string>,
+	    "name": <string>
+	},
 	"buttons": <array>,
 	"multiples": <boolean>,
 	"choices_max": <int>,
@@ -97,6 +105,10 @@ Bearer token
     "message": "OK",
     "data": {
 	"pollID": <string>,
+	"guild": {
+	    "id": <string>,
+	    "name": <string>
+	},
 	"channelID": <string>,
 	"buttons": [], // Array is empty (-> polls/:id/results)
 	"multiples": <boolean>,
@@ -135,6 +147,10 @@ Bearer token
     "data": {
 	"pollID": &#x3C;string>,
 	"channelID": &#x3C;string>,
+	"guild": {
+	    "id": &#x3C;string>,
+	    "name": &#x3C;string>
+	},
 	"buttons": [
 <strong>	    {
 </strong>                "title": &#x3C;string>,
@@ -206,6 +222,10 @@ Poll image
     "data": {
 	"pollID": <string>,
 	"channelID": <string>,
+	"guild": {
+	    "id": <string>,
+	    "name": <string>
+	},
 	"buttons": [], // Array is empty (-> polls/:id/results)
 	"multiples": <boolean>,
 	"choices_max": <int>,
@@ -252,6 +272,10 @@ Bearer token
     "data": {
 	"pollID": <string>,
 	"channelID": <string>,
+	"guild": {
+	    "id": <string>,
+	    "name": <string>
+	},
 	"buttons": <array>,
 	"multiples": <boolean>,
 	"choices_max": <int>,
@@ -304,6 +328,10 @@ Bearer token
     "data": {
 	"pollID": <string>,
 	"channelID": <string>,
+	"guild": {
+	    "id": <string>,
+	    "name": <string>
+	},
 	"buttons": [], // Array is empty (-> polls/:id/results)
 	"multiples": <boolean>,
 	"choices_max": <int>,
